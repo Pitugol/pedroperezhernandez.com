@@ -1,0 +1,426 @@
+body{
+    font-family: "Spectral", serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #e7e3dd;
+    display: flex;
+    flex-direction: column;
+    color: #1a1a1a;
+}
+
+main{
+    flex: 1;
+}
+
+header{
+    background-color: black;
+    color: white;
+}
+
+header h1, header p{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+#hero p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.padreDelBody{
+    display: flex;
+    align-items: flex-start;
+}
+
+.parteIzquierda{
+    gap: 12px;
+    margin-top: 100px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: sticky;
+    top: 40px;
+    align-self: flex-start;
+}
+
+#fotoAutor{
+    width: 450px;
+    height: 300px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.parteIzquierda h1, .parteIzquierda p{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 450px;
+}
+
+
+/* Plantilla de centrado de Novelas con foto, descripción y botón */
+
+.parteDerecha h1{
+    margin: 0 0 20px 0;
+    margin-block-start: 0;
+}
+
+.portadaNovela{
+    height: auto;
+    width: 180px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.parteDerecha{
+    margin-top: 100px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloqueNovelas{
+    position: relative;
+    width: 650px;
+}
+
+.bloqueNovelas h1{
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 20px);
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.separarNovelas{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.separarNovelas p{
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.contenidoNovela{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: auto;
+}
+
+.contenidoNovela h2, .contenidoNovela h4, .contenidoNovela h6{
+    text-align: start;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.botonCompra{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    border-radius: 6px;
+    align-self: center;
+    margin-top: auto;
+}
+
+.separarNovelas + .separarNovelas{
+    margin-top: 30px;
+}
+
+/* Fin de la plantilla */
+
+
+/* FOOTER */
+footer{
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ANIMACIONES */
+
+header,
+.parteIzquierda,
+.parteDerecha{
+    opacity: 0;
+    animation: entradaSuave 0.5s ease-out forwards;
+}
+
+.parteIzquierda{
+    animation-delay: 0.08s;
+}
+
+.parteDerecha{
+    animation-delay: 0.14s;
+}
+
+@keyframes entradaSuave{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.separarNovelas{
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.separarNovelas:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.botonCompra{
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.botonCompra:hover{
+    background-color: #dcd6cf;
+    border-color: #000;
+    color: #000;
+}
+
+#fotoAutor,
+.portadaNovela{
+    transition: transform 0.22s ease;
+}
+
+#fotoAutor:hover,
+.portadaNovela:hover{
+    transform: scale(1.015);
+}
+
+@media (prefers-reduced-motion: reduce){
+    header,
+    .parteIzquierda,
+    .parteDerecha{
+        animation: none;
+        opacity: 1;
+    }
+
+    .separarNovelas,
+    .botonCompra,
+    #fotoAutor,
+    .portadaNovela{
+        transition: none;
+    }
+}
+
+/* Fin de Animaciones */
+
+/* Adaptado a otros Dispositivos */
+/* TABLET */
+@media (max-width: 1100px){
+
+    .padreDelBody{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parteIzquierda{
+        width: 100%;
+        margin-top: 60px;
+        position: static;
+        top: auto;
+        align-self: auto;
+    }
+
+    .parteDerecha{
+        width: 100%;
+        margin-top: 95px;
+    }
+
+    #fotoAutor{
+        width: min(92vw, 450px);
+        height: auto;
+    }
+
+    .parteIzquierda p{
+        max-width: min(88vw, 520px);
+    }
+
+    .bloqueNovelas{
+        width: min(92vw, 760px);
+    }
+
+    .bloqueNovelas h1{
+        bottom: calc(100% + 18px);
+    }
+
+    .separarNovelas{
+        width: 100%;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .portadaNovela{
+        width: 180px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .contenidoNovela{
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* MÓVIL */
+@media (max-width: 768px){
+
+    .parteIzquierda{
+        margin-top: 50px;
+        gap: 10px;
+        position: static;
+        top: auto;
+        align-self: auto;
+    }
+
+    .parteDerecha{
+        margin-top: 90px;
+    }
+
+    .bloqueNovelas{
+        width: min(92vw, 560px);
+    }
+
+    #fotoAutor{
+        width: min(92vw, 420px);
+        height: auto;
+    }
+
+    .parteIzquierda p{
+        max-width: min(88vw, 460px);
+    }
+
+    .separarNovelas{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .portadaNovela{
+        width: min(62vw, 280px);
+        height: auto;
+    }
+
+    .contenidoNovela{
+        width: 100%;
+        height: auto;
+    }
+
+    .contenidoNovela h2,
+    .contenidoNovela h4,
+    .contenidoNovela h6,
+    .contenidoNovela p{
+        text-align: center;
+    }
+
+    .botonCompra{
+        align-self: center;
+        margin-top: 20px;
+    }
+}
+
+
+/* MÓVIL PEQUEÑO */
+@media (max-width: 480px){
+
+    header h1{
+        font-size: 2rem;
+    }
+
+    header p{
+        font-size: 0.95rem;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .parteIzquierda{
+        margin-top: 40px;
+        position: static;
+        top: auto;
+        align-self: auto;
+    }
+
+    .parteDerecha{
+        margin-top: 75px;
+    }
+
+    .bloqueNovelas{
+        width: 94vw;
+    }
+
+    .bloqueNovelas h1{
+        bottom: calc(100% + 14px);
+    }
+
+    #fotoAutor{
+        width: 92vw;
+        height: auto;
+    }
+
+    .parteIzquierda p{
+        max-width: 88vw;
+    }
+
+    .separarNovelas{
+        padding: 16px;
+        gap: 16px;
+        border-width: 2px;
+    }
+
+    .portadaNovela{
+        width: min(72vw, 300px);
+        height: auto;
+    }
+
+    .contenidoNovela h2{
+        font-size: 1.9rem;
+    }
+
+    .contenidoNovela h4{
+        font-size: 1rem;
+    }
+
+    .contenidoNovela h6{
+        font-size: 0.85rem;
+    }
+
+    .botonCompra{
+        padding: 10px 18px;
+    }
+
+    footer{
+        padding: 8px 12px;
+    }
+}
