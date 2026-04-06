@@ -206,16 +206,6 @@ header,
     color: #000;
 }
 
-#fotoAutor,
-.portadaNovela{
-    transition: transform 0.22s ease;
-}
-
-#fotoAutor:hover,
-.portadaNovela:hover{
-    transform: scale(1.015);
-}
-
 @media (prefers-reduced-motion: reduce){
     header,
     .parteIzquierda,
