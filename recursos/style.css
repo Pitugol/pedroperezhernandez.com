@@ -8,6 +8,16 @@ body{
     color: #1a1a1a;
 }
 
+::selection {
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+header ::selection {
+    background: rgb(255, 254, 254);
+    color: black;
+}
+
 main{
     flex: 1;
 }
@@ -15,6 +25,10 @@ main{
 header{
     background-color: black;
     color: white;
+}
+
+header p{
+    letter-spacing: 0.04em;
 }
 
 header h1, header p{
@@ -59,7 +73,6 @@ header h1, header p{
     text-align: center;
     max-width: 450px;
 }
-
 
 /* Plantilla de centrado de Novelas con foto, descripción y botón */
 
@@ -143,6 +156,12 @@ header h1, header p{
     margin-top: 30px;
 }
 
+a:focus-visible{
+    outline: 1px solid rgba(0, 0, 0, 0.75);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
 /* Fin de la plantilla */
 
 
@@ -157,7 +176,25 @@ footer{
 a{
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
+
+#email{
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 1.1px;
+    text-underline-offset: 5px;
+    transition: opacity 0.2s ease;
+}
+
+#email:hover{
+    opacity: 0.6;
+}
+
+footer a:focus-visible{
+    outline: 1px solid rgba(255, 255, 255, 0.8);
+}
+
 
 /* ANIMACIONES */
 
